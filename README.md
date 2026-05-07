@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Task Manager Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React frontend for the Task Manager application. Features a clean UI with authentication, task management and real-time updates.
 
-## Available Scripts
+## 🔗 Live Links
 
-In the project directory, you can run:
+- **Live App:** https://taskmanager-fronte.netlify.app
+- **Backend API:** https://task-manager-api-production-6b48.up.railway.app
+- **Backend Repository:** https://github.com/DAYAL-HARSH/task-manager-api
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Beautiful landing page
+- User registration and login
+- Protected dashboard route
+- Create, complete and delete tasks
+- Filter tasks by All, Active, Completed
+- Task statistics (total, active, completed)
+- Persistent login with localStorage
+- Responsive design
+- Error handling with user feedback
+- Loading states
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technologies Used
 
-### `npm test`
+- **Library:** React.js
+- **Routing:** React Router DOM
+- **HTTP Client:** Axios
+- **Styling:** Tailwind CSS
+- **Deployment:** Netlify
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Getting Started
 
-### `npm run build`
+### Prerequisites
+- Node.js installed
+- Task Manager API running
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository git clone https://github.com/DAYAL-HARSH/task-manager-frontend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies 
+- npm install
 
-### `npm run eject`
+3. Update API URL in src/api/axios.js
+```javascript
+  const API = axios.create({
+  baseURL: 'your-api-url'
+})
+```
+4. Start development server
+- npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. App will open at
+- http://localhost:3000
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📁 Project Structure
+task-manager-frontend/
+├── public/
+│   ├── index.html          # main HTML file
+│   └── _redirects          # Netlify routing fix
+├── src/
+│   ├── api/
+│   │   └── axios.js        # API configuration
+│   ├── context/
+│   │   └── AuthContext.js  # global auth state
+│   ├── pages/
+│   │   ├── Landing.js      # landing page
+│   │   ├── Login.js        # login page
+│   │   ├── Register.js     # register page
+│   │   └── Dashboard.js    # main dashboard
+│   ├── App.js              # routing setup
+│   └── index.js            # entry point
+└── package.json
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🎨 Pages
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Landing Page
+- Hero section with gradient background
+- Feature highlights
+- Navigation to login and register
 
-## Learn More
+### Login Page
+- Email and password form
+- Error handling
+- Link to register page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Register Page
+- Name, email and password form
+- Client side validation
+- Link to login page
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Dashboard
+- Task list with checkboxes
+- Add task form
+- Filter buttons (All/Active/Completed)
+- Task statistics
+- Logout button
 
-### Code Splitting
+## 👤 Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Harsh Dayal**
+- GitHub: https://github.com/DAYAL-HARSH
+- LinkedIn: https://www.linkedin.com/in/harsh-dayal-770862363
+- Email: harshdayal149@gmail.com
