@@ -32,7 +32,6 @@ const Register = () => {
             })
 
             login(response.data.user, response.data.token)
-
             navigate('/dashboard')
             
         } catch (error) {
@@ -43,91 +42,93 @@ const Register = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-600 to-purple-700 flex items-center justify-center px-4">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
+        <div className="relative min-h-screen bg-[#0f172a] flex items-center justify-center px-4 overflow-hidden">
+            <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-600/10 blur-[100px]" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-cyan-600/10 blur-[100px]" />
 
-                {/* Header */}
+            <div className="relative w-full max-w-md">
                 <div className="text-center mb-8">
-                    <h1 classsName="text-3xl font-bold text-gray-800">Create Account</h1>
-                    <p className="text-gray-500 mt-2">Start managing your tasks today</p>
-                </div>
-
-                {/* Error Message */}
-                {error && (
-                    <div className="bg-red-100 text-red-600 p-3 rounded-lg mb-6 text-center">
-                        {error}
-                    </div>
-                )}
-
-                {/* Form */}
-                <form onSubmit={handleSubmit}>
-                    {/* Name Field */}
-                    <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold mb-2">
-                            Full Name
-                        </label>
-                        <input
-                            type="text"
-                            placeholder="Vladmir Putin"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
-                            required
-                        />
-                    </div>
-                    {/* Email Field */}
-                    <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold mb-2">
-                            Email Address
-                        </label>
-                        <input
-                            type="email"
-                            placeholder="xyz@gmail.com"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
-                            required
-                        />
-                    </div>
-
-                    {/* Password Field */}
-                    <div className="mb-6">
-                        <label className="block text-gray-700 font-semibold mb-2">
-                            Password
-                        </label>
-                        <input
-                            type="password"
-                            placeholder="••••••••"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
-                            required
-                        />
-                    </div>
-
-                    {/* Submit Button */}
-                    <button
-                        type="submit"
-                        disabled={loading}
-                        className="w-full bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
-                    >
-                        {loading ? 'Creating Account...' : 'Create Account'}
-                    </button>
-                </form>
-
-                {/* Login  Link */}
-                <div className="text-center mt-6">
-                    <p className="text-gray-500">
-                        Already have an account?{' '}
-                        <span
-                            onClick={() => navigate('/login')}
-                            className="text-blue-600 font-semibold cursor-poiter hover:underline"
-                        >
-                            Login
+                    <div className="flex justify-center items-center gap-2 mb-4 cursor-pointer" onClick={() => navigate('/')}>
+                        <div className="h-7 w-7 rounded bg-gradient-to-tr from-cyan-400 to-blue-600 shadow-lg shadow-blue-500/20" />
+                        <span className="text-white text-xl font-black tracking-tighter uppercase italic">
+                            Task<span className="text-cyan-400">ly</span>
                         </span>
-                    </p>
+                    </div>
+                    <h1 className="text-3xl font-extrabold text-white tracking-tight">Create Account</h1>
+                    <p className="text-slate-400 mt-2 font-medium">Start managing your tasks today</p>
                 </div>
-                
+
+                <div className="bg-white/[0.02] backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
+                    {error && (
+                        <div className="bg-red-500/10 border border-red-500/20 text-red-400 p-3 rounded-xl mb-6 text-center text-sm animate-pulse">
+                            {error}
+                        </div>
+                    )}
+
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                        <div>
+                            <label className="block text-slate-300 font-semibold mb-2 ml-1 text-sm">
+                                Full Name
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Enter your name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-all"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-slate-300 font-semibold mb-2 ml-1 text-sm">
+                                Email Address
+                            </label>
+                            <input
+                                type="email"
+                                placeholder="xyz@gmail.com"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-all"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-slate-300 font-semibold mb-2 ml-1 text-sm">
+                                Password
+                            </label>
+                            <input
+                                type="password"
+                                placeholder="••••••••"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-all"
+                                required
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-500 active:scale-[0.98] transition-all shadow-lg shadow-blue-600/20 disabled:opacity-50 mt-4"
+                        >
+                            {loading ? 'Creating Account...' : 'Create Account'}
+                        </button>
+                    </form>
+
+                    <div className="text-center mt-8 pt-6 border-t border-white/5">
+                        <p className="text-slate-400 text-sm">
+                            Already have an account?{' '}
+                            <span
+                                onClick={() => navigate('/login')}
+                                className="text-blue-400 font-bold cursor-pointer hover:text-blue-300 transition-colors"
+                            >
+                                Login
+                            </span>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     )
