@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const API = axios.create({
-  baseURL: 'https://task-manager-api-production-6b48.up.railway.app'
+  baseURL: 'http://localhost:5000'
 })
 
 export default API
