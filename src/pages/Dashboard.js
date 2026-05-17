@@ -5,12 +5,12 @@ import API from '../api/axios'
 
 const Dashboard = () => {
   const navigate = useNavigate()
-  const { user, token, logout } = useAuth()
+  const { user, token, logout, authLoading } = useAuth()
 
   const [tasks, setTasks] = useState([])
   const [newTask, setNewTask] = useState('')
   const [newDescription, setNewDescription] = useState('')
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [showForm, setShowForm] = useState(false)
   const [filter, setFilter] = useState('all')
@@ -43,12 +43,13 @@ const Dashboard = () => {
   }, [token])
 
   useEffect(() => {
+    if(authLoading) return 
     if (!token) {
       navigate('/login')
     } else {
       fetchTasks(1, filter)
     }
-  }, [token, filter, fetchTasks, navigate])
+  }, [token, filter, fetchTasks, navigate, authLoading])
 
   const createTask = async () => {
     if (!newTask.trim()) return setError('Task title is required')

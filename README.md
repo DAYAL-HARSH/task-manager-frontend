@@ -10,16 +10,17 @@ A modern React frontend for the Task Manager application. Features a clean UI wi
 
 ## ✨ Features
 
-- Beautiful landing page
-- User registration and login
-- Protected dashboard route
+- User registration and login with JWT authentication
+- Protected dashboard route with auth loading state
 - Create, complete and delete tasks
+- AI-powered task suggestions using Groq + Llama 3
+- Paginated task list with Previous/Next navigation
 - Filter tasks by All, Active, Completed
-- Task statistics (total, active, completed)
+- Accurate task statistics fetched from backend
 - Persistent login with localStorage
-- Responsive design
+- Responsive design with Tailwind CSS
 - Error handling with user feedback
-- Loading states
+- Loading states throughout
 
 ## 🛠️ Technologies Used
 
@@ -27,7 +28,7 @@ A modern React frontend for the Task Manager application. Features a clean UI wi
 - **Routing:** React Router DOM
 - **HTTP Client:** Axios
 - **Styling:** Tailwind CSS
-- **Deployment:** Netlify
+- **Deployment:** Netlify with CI/CD via GitHub
 
 ## 🚀 Getting Started
 
@@ -91,10 +92,11 @@ task-manager-frontend/
 - Link to login page
 
 ### Dashboard
-- Task list with checkboxes
-- Add task form
+- Paginated task list with Prev/Next controls
+- AI suggest button — type a goal, get subtasks instantly
+- Add task form with title and description
 - Filter buttons (All/Active/Completed)
-- Task statistics
+- Accurate task statistics from backend
 - Logout button
 
 ## 👤 Author

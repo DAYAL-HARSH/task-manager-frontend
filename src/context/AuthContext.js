@@ -5,6 +5,7 @@ const AuthContext = createContext()
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [token, setToken] = useState(null)
+    const [authLoading, setAuthLoading] = useState(true)
 
     useEffect(() => {
         const savedToken = localStorage.getItem('token')
@@ -14,6 +15,7 @@ export const AuthProvider = ({ children }) => {
             setToken(savedToken)
             setUser(JSON.parse(savedUser))
         }
+        setAuthLoading(false)
     }, [])
 
     const login = (userData, userToken) => {
@@ -36,7 +38,8 @@ export const AuthProvider = ({ children }) => {
             token,
             login,
             logout,
-            isLoggedIn: !token
+            authLoading,
+            isLoggedIn: !!token
         }} >
             {children}
         </AuthContext.Provider>
